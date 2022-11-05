@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    <Court Counter: A point counter for basketball games>
+    Copyright (C) <2022>  <Cromega>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/main">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+        <TextView
+            android:id="@+id/title"
+            android:text="@string/title"
+            android:textSize="50sp"
+            android:textColor="@color/contrast"
+            android:textIsSelectable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+        <LinearLayout
+            android:id="@+id/team_a"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/mid_line"
+            android:layout_below="@id/title"
+            android:layout_above="@id/reset" >
+            <EditText
+                android:id="@+id/team_a_name"
+                android:text="@string/team_a"
+                android:textSize="45sp"
+                android:textAlignment="center"
+                android:textColor="@color/third"
+                android:textColorHighlight="@color/contrast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                tools:ignore="LabelFor"
+                android:inputType="textShortMessage" />
+            <TextView
+                android:id="@+id/a_points"
+                android:text="@string/points"
+                android:textSize="50sp"
+                android:textAlignment="center"
+                android:textColor="@color/contrast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/a_3"
+                android:text="@string/point_3"
+                android:textSize="35sp"
+                android:textColor="@color/second"
+                android:background="@color/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:onClick="increase"/>
+            <Button
+                android:id="@+id/a_2"
+                android:text="@string/point_2"
+                android:textSize="35sp"
+                android:textColor="@color/second"
+                android:background="@color/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:onClick="increase"/>
+            <Button
+                android:id="@+id/a_1"
+                android:text="@string/point_1"
+                android:textSize="35sp"
+                android:textColor="@color/second"
+                android:background="@color/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:onClick="increase"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/mid_line"
+            android:background="@color/contrast"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/title"
+            android:layout_above="@id/reset"/>
+        <LinearLayout
+            android:id="@+id/team_b"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:layout_marginVertical="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/mid_line"
+            android:layout_below="@id/title"
+            android:layout_above="@id/reset" >
+            <EditText
+                android:id="@+id/team_b_name"
+                android:text="@string/team_b"
+                android:textSize="45sp"
+                android:textAlignment="center"
+                android:textColor="@color/third"
+                android:textColorHighlight="@color/contrast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                tools:ignore="LabelFor"
+                android:inputType="textShortMessage" />
+            <TextView
+                android:id="@+id/b_points"
+                android:text="@string/points"
+                android:textSize="50sp"
+                android:textAlignment="center"
+                android:textColor="@color/contrast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/b_3"
+                android:text="@string/point_3"
+                android:textSize="35sp"
+                android:textColor="@color/second"
+                android:background="@color/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:onClick="increase"/>
+            <Button
+                android:id="@+id/b_2"
+                android:text="@string/point_2"
+                android:textSize="35sp"
+                android:textColor="@color/second"
+                android:background="@color/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:onClick="increase"/>
+            <Button
+                android:id="@+id/b_1"
+                android:text="@string/point_1"
+                android:textSize="35sp"
+                android:textColor="@color/second"
+                android:background="@color/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:onClick="increase"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reset"
+            android:text="@string/reset"
+            android:textSize="40sp"
+            android:textColor="@color/second"
+            android:background="@color/third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="reset"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
